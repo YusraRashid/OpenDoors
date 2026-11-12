@@ -1,0 +1,100 @@
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css";
+
+@import "nativewind/theme";
+
+/*
+ * OpenDoors design tokens.
+ *
+ * Verified contrast ratios (WCAG 2.x):
+ *   ink on surface                      14.9:1
+ *   ink-secondary on surface             9.5:1
+ *   ink-muted on surface-raised          7.6:1  (placeholder text only)
+ *   on-accent on accent                  8.3:1
+ *   accent on surface                    8.1:1
+ *   status-*-ink on status-*-tint        8.2:1 or better
+ *   ink on status-partial                7.6:1
+ *   white icons on status-full           6.1:1  (icons only, never body text)
+ *   white icons on status-none           6.5:1  (icons only, never body text)
+ *   border-strong on surface-raised      5.4:1  (control edges, needs 3:1)
+ *
+ * Any new text/background pair must be checked to at least 4.5:1 (aim for 7:1),
+ * and control edges to at least 3:1.
+ */
+
+@theme {
+  /* Only the tokens below exist; Tailwind's default palette is removed. */
+  --color-*: initial;
+
+  --color-ink: #2a2238;
+  --color-ink-secondary: #4a4058;
+  --color-ink-muted: #5a5068;
+
+  --color-surface: #fffdf8;
+  --color-surface-raised: #ffffff;
+  --color-surface-sunken: #f1ece4;
+  --color-surface-warm: #f6efe6;
+  --color-surface-lilac: #f1edf6;
+
+  --color-border: #e8e1d8;
+  --color-border-strong: #6e6680;
+
+  --color-accent: #4b3baf;
+  --color-accent-soft: #e6e3f4;
+  --color-on-accent: #ffffff;
+
+  --color-status-full: #11704a;
+  --color-status-full-tint: #ddf2e4;
+  --color-status-full-ink: #0b4f33;
+  --color-status-partial: #f2a900;
+  --color-status-partial-tint: #fcebc2;
+  --color-status-partial-ink: #5c3600;
+  --color-status-none: #b3261e;
+  --color-status-none-tint: #fce4e1;
+  --color-status-none-ink: #7f1a15;
+
+  --color-pin-label-full: #1f4d24;
+  --color-pin-label-partial: #6b3e00;
+  --color-pin-label-none: #8c1d18;
+
+  --color-focus: #ffd43b;
+  --color-location: #1a73e8;
+  --color-scrim: rgba(42, 34, 56, 0.35);
+
+  /* Fonts: one family name per weight (React Native has no font fallback). */
+  --font-sans: "AtkinsonHyperlegible_400Regular";
+  --font-atkinson: "AtkinsonHyperlegible_400Regular";
+  --font-atkinson-bold: "AtkinsonHyperlegible_700Bold";
+
+  /* Type scale, before the user's text scaling. */
+  --text-display: 26px;
+  --text-display--line-height: 30px;
+  --text-heading: 19px;
+  --text-heading--line-height: 24px;
+  --text-button: 18px;
+  --text-button--line-height: 24px;
+  --text-body: 17px;
+  --text-body--line-height: 25px;
+  --text-secondary: 16px;
+  --text-secondary--line-height: 22px;
+  --text-caption: 15px;
+  --text-caption--line-height: 20px;
+  --text-tab: 14px;
+  --text-tab--line-height: 18px;
+  --text-pin: 13px;
+  --text-pin--line-height: 16px;
+
+  /* Radii. Pills use rounded-full. */
+  --radius-sheet: 28px;
+  --radius-card: 18px;
+  --radius-toast: 16px;
+
+  /* Minimum sizes: min-h-touch, min-w-touch, min-h-control, size-fab ... */
+  --spacing-touch: 44px;
+  --spacing-control: 56px;
+  --spacing-fab: 60px;
+  --spacing-tabbar: 72px;
+
+  --shadow-raised: 0 2px 6px rgba(42, 34, 56, 0.22);
+}
